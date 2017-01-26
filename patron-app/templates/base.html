@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+  <head>
+
+<link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+<link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet">
+    <title>Patron</title>
+
+
+</head>
+<body>
+    <br>
+    <div id="content" style="width:700px; margin:0 auto;">
+        <a href="{{ url_for ('getuser') }}">
+              coordinators
+</a> | <a href="{{ url_for ('getpatron') }}">
+clients
+</a>
+<hr>
+</div>
+    <div id="content" style="width:700px; margin:0 auto;">
+        {% block content %}
+
+
+        {% endblock %}
+        <hr>
+
+    </div>
+    <div id="footer">
+        <h5>
+            {% block footer %}
+            &copy; Copyright 2017 by vhdev.
+            {% endblock %}
+        </h5>
+    </div>
+
+  </body>
+</html>

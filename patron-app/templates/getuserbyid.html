@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="list-group">
+  <a href="#" class="list-group-item disabled">
+    Coordinator</a>
+
+{% for k, v in bla.1.User.items() %}
+
+  <a href="#" class="list-group-item">{{ k }}: {{ v }} </a>
+  {% endfor %}
+
+[Delete, Edit]
+
+{% endblock %}

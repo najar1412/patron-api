@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+<div>
+<table class="table table-striped">
+
+    <thead>
+      <tr>
+        <th>Client</th>
+        <th>Contact</th>
+        <th>Mobile</th>
+        <th>Email</th>
+        <th>Managed By</th>
+      </tr>
+    </thead>
+
+    <tbody>
+
+        {% for x in patron.1.Patrons %}
+
+      <tr>
+        <td>{{x.client}}</td>
+        <td>{{x.contact}}</td>
+        <td>{{x.phone}}</td>
+        <td>{{x.email}}</td>
+        <td>IMP</td>
+      </tr>{% endfor %}
+
+    </tbody>
+
+</table>
+
+
+
+{% endblock %}
