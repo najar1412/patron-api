@@ -9,6 +9,7 @@
         <th>Name</th>
         <th>Team</th>
         <th>Email</th>
+        <th>Tools</th>
       </tr>
     </thead>
 
@@ -19,7 +20,8 @@
       <tr>
         <td><a href="{{ url_for ('getuserbyid', id=x.id) }}">{{x.name}}</a></td>
         <td>{{x.team}}</td>
-        <td></td>
+        <td>IMP</td>
+        <td>[Edit, Delete]</td>
       </tr>{% endfor %}
 
     </tbody>
