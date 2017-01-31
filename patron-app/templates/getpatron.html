@@ -3,6 +3,19 @@
 
 
 <div>
+New Patron
+<form>
+    <div class="form-inline">
+        <input type="text" class="form-control" id="patron" placeholder="Company">
+        <input type="text" class="form-control" id="patronname" placeholder="Contact Name">
+        <input type="tel" class="form-control" id="patronmob" placeholder="Contact phone">
+        <input type="email" class="form-control" id="patronemail" placeholder="Contact Email">
+        <input type="text" class="form-control" id="patronmanage" placeholder="Managed By">
+    </div>
+</form>
+
+<hr>
+
 <table class="table table-striped">
 
     <thead>
@@ -20,7 +33,7 @@
         {% for x in patron.1.Patrons %}
 
       <tr>
-        <td>{{x.client}}</td>
+        <td><a href="{{ url_for ('getpatronbyid', id=x.id) }}">{{x.client}}</a></td>
         <td>{{x.contact}}</td>
         <td>{{x.phone}}</td>
         <td>{{x.email}}</td>

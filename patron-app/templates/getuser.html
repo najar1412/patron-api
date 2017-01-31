@@ -2,6 +2,16 @@
 {% block content %}
 
 <div>
+    New Coordinator
+    <form>
+        <div class="form-inline">
+            <input type="text" class="form-control" id="user" placeholder="Name">
+            <input type="email" class="form-control" id="userteam" placeholder="Team">
+            <input type="text" class="form-control" id="useremail" placeholder="Email">
+        </div>
+    </form>
+
+    <hr>
 <table class="table table-striped">
 
     <thead>
@@ -21,7 +31,7 @@
         <td><a href="{{ url_for ('getuserbyid', id=x.id) }}">{{x.name}}</a></td>
         <td>{{x.team}}</td>
         <td>IMP</td>
-        <td>[Edit, Delete]</td>
+        <td>Edit, <a href="{{ url_for ('deluser', id=x.id) }}">Delete</a></td>
       </tr>{% endfor %}
 
     </tbody>

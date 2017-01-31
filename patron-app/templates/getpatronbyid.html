@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+
+<div class="list-group">
+  <a href="#" class="list-group-item disabled">
+    {{ bla.1.Patron.client }}</a>
+
+{% for k, v in bla.1.Patron.items() %}
+{% if k != 'client' %}
+<a href="#" class="list-group-item">{{ k }}: {{ v }} </a>
+{% endif %}
+{% endfor %}
+<br>
+[Edit, <a href="{{ url_for ('delpatron', id=bla.1.Patron.id) }}">Delete</a>]
+
+{% endblock %}
