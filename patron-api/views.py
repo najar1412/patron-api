@@ -256,6 +256,7 @@ def patch_patron():
 @app.route('{}/user/delete/<id>'.format(BASE_ROUTE), methods=['DELETE'])
 def del_user(id):
     if request.method == 'DELETE':
+        print(id)
 
         # Init session
         session = Session()

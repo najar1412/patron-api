@@ -172,15 +172,16 @@ def delete_patron(session, id):
         return False
 
 
-def delete_user(session):
+def delete_user(session, id):
     try:
         to_delete = session.query(User).get(id)
         session.delete(to_delete)
 
         session.commit()
         session.close()
-
+        print('nada')
         return True
     except:
         # TODO: Catch proper errors
+        print('nada')
         return False
