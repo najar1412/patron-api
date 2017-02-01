@@ -44,6 +44,29 @@ def getpatronbyid():
     return render_template('getpatronbyid.html', bla=r.json())
 
 
+@app.route('/newuser', methods=['POST'])
+def newuser():
+
+    if request.method == 'POST':
+        form = request.form
+        name = form['user']
+        team = form['userteam']
+        email = form['useremail']
+
+        requests.post('{}/user?name={}&team={}&email={}'.format(
+            BASEURL, name, team, email
+            )
+        )
+
+        """
+        # deal with errors
+        if post status == 'Failed':
+            return error message
+        """
+
+    return render_template('index.html')
+
+
 @app.route('/deluser', methods=['GET'])
 def deluser():
 

@@ -3,11 +3,12 @@
 
 <div>
     New Coordinator
-    <form>
+    <form method="post" action="{{ url_for('newuser') }}">
         <div class="form-inline">
-            <input type="text" class="form-control" id="user" placeholder="Name">
-            <input type="email" class="form-control" id="userteam" placeholder="Team">
-            <input type="text" class="form-control" id="useremail" placeholder="Email">
+            <input type="text" class="form-control" id="user" name="user" placeholder="Name">
+            <input type="text" class="form-control" id="userteam" name="userteam" placeholder="Team">
+            <input type="email" class="form-control" id="useremail" name="useremail" placeholder="Email">
+            <button type="submit" class="btn btn-primary">Submit</button>
         </div>
     </form>
 
