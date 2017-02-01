@@ -4,13 +4,14 @@
 
 <div>
 New Patron
-<form>
+<form method="post" action="{{ url_for('newpatron') }}">
     <div class="form-inline">
-        <input type="text" class="form-control" id="patron" placeholder="Company">
-        <input type="text" class="form-control" id="patronname" placeholder="Contact Name">
-        <input type="tel" class="form-control" id="patronmob" placeholder="Contact phone">
-        <input type="email" class="form-control" id="patronemail" placeholder="Contact Email">
-        <input type="text" class="form-control" id="patronmanage" placeholder="Managed By">
+        <input type="text" class="form-control" id="patron" name="patron" placeholder="Company">
+        <input type="text" class="form-control" id="patronname" name="patronname" placeholder="Contact Name">
+        <input type="tel" class="form-control" id="patronmob" name="patronmob" placeholder="Contact phone">
+        <input type="email" class="form-control" id="patronemail" name="patronemail" placeholder="Contact Email">
+        <input type="text" class="form-control" id="patronmanage" name="patronmanage" placeholder="Managed By">
+        <button type="submit" class="btn btn-primary">Submit</button>
     </div>
 </form>
 

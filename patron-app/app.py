@@ -64,7 +64,37 @@ def newuser():
             return error message
         """
 
-    return render_template('index.html')
+    r = requests.get('{}/user'.format(BASEURL))
+
+    return render_template('getuser.html', user=r.json())
+
+
+@app.route('/newpatron', methods=['POST'])
+def newpatron():
+
+    if request.method == 'POST':
+        form = request.form
+        client = form['patron']
+        contact = form['patronname']
+        contactphone = form['patronmob']
+        contactemail = form['patronemail']
+
+        # 127.0.0.1:5000/patron/api/patron?client=webuildcrap&contact=sally&contactphone=9292349525&contactemail=sally@webuildcrap.co
+
+        requests.post('{}/patron?client={}&contact={}&contactphone={}&contactemail={}'.format(
+            BASEURL, client, contact, contactphone, contactemail
+            )
+        )
+
+        """
+        # deal with errors
+        if post status == 'Failed':
+            return error message
+        """
+
+        r = requests.get('{}/patron'.format(BASEURL))
+
+        return render_template('getpatron.html', patron=r.json())
 
 
 @app.route('/deluser', methods=['GET'])
