@@ -50,8 +50,6 @@ def patron():
 
             patron = post_patron(session, **query)
 
-            print(query)
-
             return make_response(
                 jsonify({'{} Status'.format(request.method): 'Success'})
             ), 200

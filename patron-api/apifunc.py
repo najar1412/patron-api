@@ -85,7 +85,8 @@ def post_user(session, **kwarg):
     session.commit()
     session.close()
 
-    return user
+    # return user
+    return user.id
 
 
 def get_patron(session):
