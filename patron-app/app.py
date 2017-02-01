@@ -79,8 +79,6 @@ def newpatron():
         contactphone = form['patronmob']
         contactemail = form['patronemail']
 
-        # 127.0.0.1:5000/patron/api/patron?client=webuildcrap&contact=sally&contactphone=9292349525&contactemail=sally@webuildcrap.co
-
         requests.post('{}/patron?client={}&contact={}&contactphone={}&contactemail={}'.format(
             BASEURL, client, contact, contactphone, contactemail
             )
